@@ -1,8 +1,16 @@
 @import "tailwindcss";
+@import "../custom-styles/fonts.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme {
+  --font-IranYekan: "IranYekan";
+  --font-IranYekanBold: "IranYekan Bold";
+  --font-IranYekanMedium: "IranYekan Medium";
+  --font-IranYekanExtra: "IranYekan Extra";
 }
 
 @theme inline {
