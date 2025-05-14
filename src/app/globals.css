@@ -11,6 +11,12 @@
   --font-IranYekanBold: "IranYekan Bold";
   --font-IranYekanMedium: "IranYekan Medium";
   --font-IranYekanExtra: "IranYekan Extra";
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
 }
 
 @theme inline {

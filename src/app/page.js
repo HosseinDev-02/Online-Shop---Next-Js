@@ -1,6 +1,8 @@
+import Container from "@/components/Container";
+
 export default function Home() {
   return (
-    <div>
+    <Container>
       <h3 className="font-IranYekan">
         سلام دنیا
       </h3>
@@ -13,6 +15,6 @@ export default function Home() {
       <h3 className="font-IranYekanExtra">
         سلام دنیا
       </h3>
-    </div>
+    </Container>
   );
 }
