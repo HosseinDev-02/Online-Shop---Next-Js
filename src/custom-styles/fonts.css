@@ -17,3 +17,28 @@
     font-family: "IranYekan Extra";
     src: url("/fonts/IranYekan/IranYekan-Extra.woff") format("woff");
 }
+
+@font-face {
+    font-family: "TitrPlus Circle";
+    src: url("/fonts/Titr-Plus/TitrPlusCircle.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "TitrPlus Line";
+    src: url("/fonts/Titr-Plus/TitrPlusLine.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "TitrPlus Rectangle";
+    src: url("/fonts/Titr-Plus/TitrPlusRectangle.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Titr Mj";
+    src: url("/fonts/Mj_Titr/Mj_Titr.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Richard Regular";
+    src: url("/fonts/RichardCleanPersonalUseRegular.ttf") format("truetype");
+}
