@@ -1,44 +1,35 @@
-@font-face {
-    font-family: "IranYekan";
-    src: url("/fonts/IranYekan/IranYekan-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "IranYekan Bold";
-    src: url("/fonts/IranYekan/IranYekan-Bold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "IranYekan Medium";
-    src: url("/fonts/IranYekan/IranYekan-Medium.woff") format("woff");
-}
-
-@font-face {
-    font-family: "IranYekan Extra";
-    src: url("/fonts/IranYekan/IranYekan-Extra.woff") format("woff");
-}
-
-@font-face {
-    font-family: "TitrPlus Circle";
-    src: url("/fonts/Titr-Plus/TitrPlusCircle.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "TitrPlus Line";
-    src: url("/fonts/Titr-Plus/TitrPlusLine.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "TitrPlus Rectangle";
-    src: url("/fonts/Titr-Plus/TitrPlusRectangle.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Titr Mj";
-    src: url("/fonts/Mj_Titr/Mj_Titr.ttf") format("truetype");
-}
 
 @font-face {
     font-family: "Richard Regular";
     src: url("/fonts/RichardCleanPersonalUseRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IranSans";
+    src: url("/fonts/IranSansWeb/IRANSansWeb.woff") format("woff");
+}
+
+@font-face {
+    font-family: "IranSans Medium";
+    src: url("/fonts/IranSansWeb/IRANSansWeb_Medium_FaNum.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IranSans Black";
+    src: url("/fonts/IranSansWeb/IRANSansWeb_Black_FaNum.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IranSans Bold";
+    src: url("/fonts/IranSansWeb/IRANSansWeb_Bold_FaNum.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IranSans UltraLight";
+    src: url("/fonts/IranSansWeb/IRANSansWeb_UltraLight_FaNum.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IranSans Light";
+    src: url("/fonts/IranSansWeb/IRANSansWeb_Light_FaNum.woff2") format("woff2");
 }

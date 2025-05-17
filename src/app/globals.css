@@ -13,15 +13,13 @@
   --color-secondary: #032340;
   --color-gray: #F9F9F9;
 
-  --font-IranYekan: "IranYekan";
-  --font-IranYekanBold: "IranYekan Bold";
-  --font-IranYekanMedium: "IranYekan Medium";
-  --font-IranYekanExtra: "IranYekan Extra";
-  --font-TitrPlusCircle: "TitrPlus Circle";
-  --font-TitrPlusLine: "TitrPlus Line";
-  --font-TitrPlusRectangle: "TitrPlus Rectangle";
-  --font-MjTitr: "Titr Mj";
   --font-RichardRegular: "Richard Regular";
+  --font-IranSansMedium: "IranSans Medium";
+  --font-IranSans: "IranSans";
+  --font-IranSansBold: "IranSans Bold";
+  --font-IranSansUltraLight: "IranSans UltraLight";
+  --font-IranSansLight: "IranSans Light";
+  --font-IranSansBlack: "IranSans Black";
 
   --breakpoint-*: initial;
   --breakpoint-sm: 40rem;
@@ -45,5 +43,5 @@
 } */
 
 body {
-  @apply bg-white font-IranYekan
+  @apply bg-white font-IranSans
 }
