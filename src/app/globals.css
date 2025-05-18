@@ -47,3 +47,8 @@
 body {
   @apply bg-white font-IranSans
 }
+
+
+.primary-link {
+  @apply transition-colors duration-200 hover:text-primary
+}

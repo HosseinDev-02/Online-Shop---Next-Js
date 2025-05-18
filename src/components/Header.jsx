@@ -18,6 +18,13 @@ import HeartIcon from "./icons/HeartIcon";
 import LocationIcon from "./icons/LocationIcon";
 import MessageIcon from "./icons/MessageIcon";
 import LogoutIcon from "./icons/LogoutIcon";
+import {
+    userProfileLinks,
+    links,
+    specialLinks,
+    submenuListItems,
+} from "@/utils/data";
+import ChevronDownIcon from "./icons/ChevronDownIcon";
 
 const getSpecialLinksIcon = (link) => {
     if (link.includes("جدیدترین")) return StarIcon;
@@ -35,81 +42,6 @@ const getUserProfileLinksIcon = (link) => {
 };
 
 export default function Header() {
-
-    const links = [
-        {
-            id: 1,
-            title: "صفحه اصلی",
-            href: "/",
-        },
-        {
-            id: 2,
-            title: "فروشگاه",
-            href: "/store",
-            submenu: true
-        },
-        {
-            id: 3,
-            title: "مقاله ها",
-            href: "/blogs",
-        },
-        {
-            id: 4,
-            title: "تماس با ما",
-            href: "/contact-us",
-        },
-    ];
-
-    const specialLinks = [
-        {
-            id: 1,
-            title: "جدیدترین محصولات",
-            href: "#",
-        },
-        {
-            id: 2,
-            title: "تخفیفات ویژه",
-            href: "#",
-        },
-        {
-            id: 3,
-            title: "پرفروش ترین ها",
-            href: "#",
-        },
-    ];
-
-    const userProfileLinks = [
-        {
-            id: 1,
-            title: "حساب کاربری",
-            href: "#",
-        },
-        {
-            id: 2,
-            title: "تاریخچه سفارشات",
-            href: "#",
-        },
-        {
-            id: 3,
-            title: "علاقه مندی ها",
-            href: "#",
-        },
-        {
-            id: 4,
-            title: "آدرس ها",
-            href: "#",
-        },
-        {
-            id: 5,
-            title: "دیدگاه‌ها و نظرات",
-            href: "#",
-        },
-        {
-            id: 6,
-            title: "خروج",
-            href: "#",
-        },
-    ];
     return (
         <header className="bg-white w-full px-36 pt-5">
             {/* Top */}
@@ -139,7 +71,8 @@ export default function Header() {
                             className="flex items-center gap-2 rounded-xl px-4 h-12 bg-white shadow-[0px_0px_20px_2px_#00000014]"
                             href="#"
                         >
-                            <span className="font-IranSansMedium">
+                            {/* When User LoggedOut */}
+                            <span className="font-IranSansMedium hidden">
                                 <span className="tracking-tighter">
                                     ثبت نام
                                 </span>{" "}
@@ -150,9 +83,15 @@ export default function Header() {
                                 width={24}
                                 height={24}
                             />
+                            {/* When User LoggedIn */}
+                            <ChevronDownIcon
+                                color="var(--color-primary)"
+                                width={16}
+                                height={16}
+                            />
                         </Link>
                         {/* User Header Content */}
-                        <div className="bg-white rounded-md w-[288px] absolute left-0 top-full shadow invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                        <div className="bg-white rounded-md w-[288px] absolute left-0 top-14 shadow invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 overflow-hidden z-20">
                             {/* User Profile Info */}
                             <div className="flex flex-col items-center justify-center gap-2 font-IranSansMedium text-xs h-[248px] bg-gradient-to-b from-[#FEEEE8] to-white">
                                 <div className="relative w-[100px] h-[100px]">
@@ -178,9 +117,15 @@ export default function Header() {
                                         );
                                         return (
                                             <li className="py-6" key={link.id}>
-                                                <Link className="flex items-center gap-2" href={link.href}>
+                                                <Link
+                                                    className="flex items-center gap-2 primary-link"
+                                                    href={link.href}
+                                                >
                                                     <span>
-                                                        <Icon width={24} height={24}/>
+                                                        <Icon
+                                                            width={24}
+                                                            height={24}
+                                                        />
                                                     </span>
                                                     <span>{link.title}</span>
                                                 </Link>
@@ -195,13 +140,13 @@ export default function Header() {
                     <div className="relative group">
                         {/* Cart Btn */}
                         <button className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center relative cursor-pointer">
-                            <span className="text-xs font-IranSansMedium absolute -left-1 -top-1 text-white bg-black rounded-full w-4 h-4 flex items-center justify-center">
-                                0
+                            <span className="text-xs font-IranSansMedium absolute -left-1 -top-1 text-white bg-black rounded-full h-4 px-1 flex items-center justify-center">
+                                3
                             </span>
                             <BasketIcon width={24} height={24} />
                         </button>
                         {/* Cart Content */}
-                        <div className="bg-white rounded-md w-[345px] absolute left-0 top-full shadow opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+                        <div className="bg-white rounded-md w-[345px] absolute left-0 top-14 shadow opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 delay-100 z-20">
                             {/* Cart Items */}
                             <div className="flex flex-col gap-4 px-4 pt-4 divide-y divide-zinc-600 max-h-[337px] overflow-auto">
                                 {/* Cart Item */}
@@ -227,7 +172,13 @@ export default function Header() {
                                                 <div className="flex justify-between w-full">
                                                     {/* Item Desc */}
                                                     <h6 className="line-clamp-1 font-IranSansMedium text-sm">
-                                                        کفش نایک مدل 2024 Small
+                                                        <Link
+                                                            href="#"
+                                                            className="primary-link"
+                                                        >
+                                                            کفش نایک مدل 2024
+                                                            Small
+                                                        </Link>
                                                     </h6>
                                                     {/* Remove Cart Item Btn */}
                                                     <span>
@@ -312,7 +263,13 @@ export default function Header() {
                                                 <div className="flex justify-between w-full">
                                                     {/* Item Desc */}
                                                     <h6 className="line-clamp-1 font-IranSansMedium text-sm">
-                                                        کفش نایک مدل 2024 Small
+                                                        <Link
+                                                            href="#"
+                                                            className="primary-link"
+                                                        >
+                                                            کفش نایک مدل 2024
+                                                            Small
+                                                        </Link>
                                                     </h6>
                                                     {/* Remove Cart Item Btn */}
                                                     <span>
@@ -398,7 +355,13 @@ export default function Header() {
                                                 <div className="flex justify-between w-full">
                                                     {/* Item Desc */}
                                                     <h6 className="line-clamp-1 font-IranSansMedium text-sm">
-                                                        کفش نایک مدل 2024 Small
+                                                        <Link
+                                                            href="#"
+                                                            className="primary-link"
+                                                        >
+                                                            کفش نایک مدل 2024
+                                                            Small
+                                                        </Link>
                                                     </h6>
                                                     {/* Remove Cart Item Btn */}
                                                     <span>
@@ -464,7 +427,7 @@ export default function Header() {
                             {/* Open Cart Button */}
                             <Link
                                 href="#"
-                                className="bg-primary rounded-b-md text-white font-IranSansMedium flex justify-center items-center gap-2 h-12 w-full"
+                                className="bg-primary transition-all duration-200 hover:opacity-80 rounded-b-md text-white font-IranSansMedium flex justify-center items-center gap-2 h-12 w-full"
                             >
                                 <span>مشاهده سبد خرید</span>
                                 <EyeIcon width={24} height={24} />
@@ -474,12 +437,80 @@ export default function Header() {
                 </div>
             </div>
             {/* Bottom */}
-            <div className="py-5 bg-gray rounded-full px-10 mt-10 font-IranSansMedium flex items-center justify-between">
+            <div className="py-5 bg-gray rounded-full px-10 mt-10 font-IranSansMedium flex items-center justify-between relative">
                 {/* Menu */}
                 <ul className="flex items-center gap-4">
                     {links.map((link) => (
-                        <li key={link.id}>
-                            <Link href={link.href}>{link.title}</Link>
+                        <li className="group/store" key={link.id}>
+                            <Link className="primary-link" href={link.href}>
+                                {link.title}
+                            </Link>
+                            {link.submenu && (
+                                <div className="absolute right-0 left-0 top-18 bg-white shadow-[0px_0px_50px_10px_#00000014] rounded-xl transition-all duration-300 delay-100 invisible opacity-0 group-hover/store:visible group-hover/store:opacity-100">
+                                    {/* Submenu List Items */}
+                                    <div className="py-6 border-l border-[#EDEDED] w-fit">
+                                        <ul className="flex flex-col">
+                                            {submenuListItems.map(
+                                                (listItem) => (
+                                                    <li
+                                                        className="group primary-link hover:bg-gray-100 "
+                                                        key={listItem.id}
+                                                    >
+                                                        <Link
+                                                            className="flex px-10 py-4"
+                                                            href={listItem.href}
+                                                        >
+                                                            {listItem.title}
+                                                        </Link>
+                                                        <div className="flex flex-col items-start gap-8 p-10 flex-wrap absolute right-[220px] left-0 w-fit transition-all duration-300 top-0 bottom-0 z-20 invisible opacity-0 text-black group-hover:opacity-100 group-hover:visible">
+                                                            {listItem.items.map(
+                                                                (item) => (
+                                                                    <div
+                                                                        className="flex flex-col gap-4"
+                                                                        key={
+                                                                            item.id
+                                                                        }
+                                                                    >
+                                                                        <h6 className="text-primary text-xs">
+                                                                            {
+                                                                                item.title
+                                                                            }
+                                                                        </h6>
+                                                                        <ul className="flex flex-col gap-2 text-sm">
+                                                                            {item.links.map(
+                                                                                (
+                                                                                    link
+                                                                                ) => (
+                                                                                    <li
+                                                                                        key={
+                                                                                            link.id
+                                                                                        }
+                                                                                    >
+                                                                                        <Link
+                                                                                            className="primary-link"
+                                                                                            href={
+                                                                                                link.href
+                                                                                            }
+                                                                                        >
+                                                                                            {
+                                                                                                link.title
+                                                                                            }
+                                                                                        </Link>
+                                                                                    </li>
+                                                                                )
+                                                                            )}
+                                                                        </ul>
+                                                                    </div>
+                                                                )
+                                                            )}
+                                                        </div>
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
                         </li>
                     ))}
                 </ul>
@@ -489,7 +520,7 @@ export default function Header() {
                         const Icon = getSpecialLinksIcon(link.title);
                         return (
                             <Link
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 link"
                                 key={link.id}
                                 href={link.href}
                             >
