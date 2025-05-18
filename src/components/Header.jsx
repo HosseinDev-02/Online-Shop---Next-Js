@@ -12,6 +12,12 @@ import CloseIcon from "./icons/CloseIcon";
 import PlusIcon from "./icons/PlusIcon";
 import MinusIcon from "./icons/MinusIcon";
 import EyeIcon from "./icons/EyeIcon";
+import UserSquareIcon from "./icons/UserSquareIcon";
+import NoteIcon from "./icons/NoteIcon";
+import HeartIcon from "./icons/HeartIcon";
+import LocationIcon from "./icons/LocationIcon";
+import MessageIcon from "./icons/MessageIcon";
+import LogoutIcon from "./icons/LogoutIcon";
 
 const getSpecialLinksIcon = (link) => {
     if (link.includes("جدیدترین")) return StarIcon;
@@ -19,7 +25,41 @@ const getSpecialLinksIcon = (link) => {
     if (link.includes("پرفروش ترین")) return MedalStarIcon;
 };
 
+const getUserProfileLinksIcon = (link) => {
+    if (link.includes("حساب کاربری")) return UserSquareIcon;
+    if (link.includes("تاریخچه سفارشات")) return NoteIcon;
+    if (link.includes("علاقه مندی ها")) return HeartIcon;
+    if (link.includes("آدرس ها")) return LocationIcon;
+    if (link.includes("دیدگاه‌ها و نظرات")) return MessageIcon;
+    if (link.includes("خروج")) return LogoutIcon;
+};
+
 export default function Header() {
+
+    const links = [
+        {
+            id: 1,
+            title: "صفحه اصلی",
+            href: "/",
+        },
+        {
+            id: 2,
+            title: "فروشگاه",
+            href: "/store",
+            submenu: true
+        },
+        {
+            id: 3,
+            title: "مقاله ها",
+            href: "/blogs",
+        },
+        {
+            id: 4,
+            title: "تماس با ما",
+            href: "/contact-us",
+        },
+    ];
+
     const specialLinks = [
         {
             id: 1,
@@ -37,26 +77,37 @@ export default function Header() {
             href: "#",
         },
     ];
-    const links = [
+
+    const userProfileLinks = [
         {
             id: 1,
-            title: "صفحه اصلی",
-            href: "/",
+            title: "حساب کاربری",
+            href: "#",
         },
         {
             id: 2,
-            title: "فروشگاه",
-            href: "/store",
+            title: "تاریخچه سفارشات",
+            href: "#",
         },
         {
             id: 3,
-            title: "مقاله ها",
-            href: "/blogs",
+            title: "علاقه مندی ها",
+            href: "#",
         },
         {
             id: 4,
-            title: "تماس با ما",
-            href: "/contact-us",
+            title: "آدرس ها",
+            href: "#",
+        },
+        {
+            id: 5,
+            title: "دیدگاه‌ها و نظرات",
+            href: "#",
+        },
+        {
+            id: 6,
+            title: "خروج",
+            href: "#",
         },
     ];
     return (
@@ -81,17 +132,65 @@ export default function Header() {
                     />
                 </div>
                 <div className="flex items-center gap-4">
-                    {/* User Login / Register Button */}
-                    <Link
-                        className="flex items-center gap-2 rounded-xl px-4 h-12 bg-white shadow-[0px_0px_20px_2px_#00000014]"
-                        href="#"
-                    >
-                        <span className="font-IranSansMedium">
-                            <span className="tracking-tighter">ثبت نام</span> |
-                            ورود
-                        </span>
-                        <UserIcon strokeWidth={"2"} width={24} height={24} />
-                    </Link>
+                    {/* User Wrapper */}
+                    <div className="group relative">
+                        {/* User Login / Register Button */}
+                        <Link
+                            className="flex items-center gap-2 rounded-xl px-4 h-12 bg-white shadow-[0px_0px_20px_2px_#00000014]"
+                            href="#"
+                        >
+                            <span className="font-IranSansMedium">
+                                <span className="tracking-tighter">
+                                    ثبت نام
+                                </span>{" "}
+                                | ورود
+                            </span>
+                            <UserIcon
+                                strokeWidth={"2"}
+                                width={24}
+                                height={24}
+                            />
+                        </Link>
+                        {/* User Header Content */}
+                        <div className="bg-white rounded-md w-[288px] absolute left-0 top-full shadow invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                            {/* User Profile Info */}
+                            <div className="flex flex-col items-center justify-center gap-2 font-IranSansMedium text-xs h-[248px] bg-gradient-to-b from-[#FEEEE8] to-white">
+                                <div className="relative w-[100px] h-[100px]">
+                                    <span className="absolute right-0 bottom-0 z-10 bg-white w-8 h-8 rounded-full flex items-center justify-center">
+                                        <PlusIcon width={24} height={24} />
+                                    </span>
+                                    <Image
+                                        alt="user-profile-image"
+                                        className="object-cover rounded-full"
+                                        fill={true}
+                                        src="/images/user-profile.jpg"
+                                    />
+                                </div>
+                                <span>حسین رستمی</span>
+                                <span>Rostamidev2002@gmail.com</span>
+                            </div>
+                            {/* User Profile Menu */}
+                            <div className="px-8">
+                                <ul className="flex flex-col divide-y divide-[#EDEDED]">
+                                    {userProfileLinks.map((link) => {
+                                        const Icon = getUserProfileLinksIcon(
+                                            link.title
+                                        );
+                                        return (
+                                            <li className="py-6" key={link.id}>
+                                                <Link className="flex items-center gap-2" href={link.href}>
+                                                    <span>
+                                                        <Icon width={24} height={24}/>
+                                                    </span>
+                                                    <span>{link.title}</span>
+                                                </Link>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     {/* Cart Wrapper */}
                     <div className="relative group">
                         {/* Cart Btn */}
