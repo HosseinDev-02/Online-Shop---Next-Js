@@ -21,6 +21,8 @@
   --font-IranSansLight: "IranSans Light";
   --font-IranSansBlack: "IranSans Black";
 
+  --text-xxs: 0.625rem;
+
   --breakpoint-*: initial;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
