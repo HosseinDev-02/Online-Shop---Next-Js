@@ -1,13 +1,13 @@
 import React from "react";
 
-function UserIcon({ width, height, strokeWidth, className, color }) {
+function UserIcon({ width, height, strokeWidth, className, color, fill }) {
     return (
         <svg
             className={className}
             width={width}
             height={height}
             viewBox="0 0 24 24"
-            fill="none"
+            fill={fill || "none"}
             xmlns="http://www.w3.org/2000/svg"
         >
             <path

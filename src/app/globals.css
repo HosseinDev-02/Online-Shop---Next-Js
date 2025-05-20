@@ -24,6 +24,7 @@
   --text-xxs: 0.625rem;
 
   --breakpoint-*: initial;
+  --breakpoint-xs: 30rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -51,4 +52,8 @@ body {
 
 .primary-link {
   @apply transition-colors duration-200 hover:text-primary
+}
+
+.icon-active {
+  @apply transition-colors duration-200 delay-75 fill-black text-black
 }
