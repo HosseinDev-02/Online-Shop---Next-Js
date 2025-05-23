@@ -22,7 +22,7 @@ import {
     userProfileLinks,
     links,
     specialLinks,
-    submenuListItems,
+    categoryItems,
 } from "@/utils/data";
 import ChevronDownIcon from "./icons/ChevronDownIcon";
 import SofaIcon from "./icons/SofaIcon";
@@ -36,6 +36,7 @@ import NecklaceIcon from "./icons/NecklaceIcon";
 import NotificationIcon from "./icons/NotificationIcon";
 import HomeIcon from "./icons/HomeIcon";
 import CategoryIcon from "./icons/CategoryIcon";
+import { getMenuItemsIcon } from "@/utils/funcs";
 
 const getSpecialLinksIcon = (link) => {
     if (link.includes("جدیدترین")) return StarIcon;
@@ -52,16 +53,7 @@ const getUserProfileLinksIcon = (link) => {
     if (link.includes("خروج")) return LogoutIcon;
 };
 
-const getMenuItemsIcon = (link) => {
-    if (link.includes("موبایل")) return MobileIcon;
-    if (link.includes("کالای دیجیتال")) return MonitorIcon;
-    if (link.includes("خانه و آشپزخانه")) return SofaIcon;
-    if (link.includes("لوازم خانگی برقی")) return RefrigeratorIcon;
-    if (link.includes("آرایشی بهداشتی")) return HeartEditIcon;
-    if (link.includes("خودرو و موتورسیکلت")) return CarIcon;
-    if (link.includes("مد و پوشاک")) return ShirtIcon;
-    if (link.includes("طلا و نقره")) return NecklaceIcon;
-};
+
 
 export default function Header() {
     return (
@@ -484,7 +476,7 @@ export default function Header() {
                                         {/* Submenu List Items */}
                                         <div className="py-6 border-l border-[#EDEDED] w-fit">
                                             <ul className="flex flex-col">
-                                                {submenuListItems.map(
+                                                {categoryItems.map(
                                                     (listItem) => {
                                                         const Icon =
                                                             getMenuItemsIcon(
@@ -623,7 +615,10 @@ export default function Header() {
                         <HomeIcon width={24} height={24} />
                         <span>خانه</span>
                     </Link>
-                    <Link className="flex flex-col items-center gap-1" href="#">
+                    <Link
+                        className="flex flex-col items-center gap-1"
+                        href="/categories"
+                    >
                         <CategoryIcon width={24} height={24} />
                         <span>دسته بندی ها</span>
                     </Link>

@@ -4,7 +4,9 @@ import Container from "./Container";
 function Footer() {
     return (
         <footer>
-            <Container></Container>
+            <Container>
+                Footer
+            </Container>
         </footer>
     );
 }

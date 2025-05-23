@@ -73,7 +73,7 @@ const userProfileLinks = [
     },
 ];
 
-const submenuListItems = [
+const categoryItems = [
     {
         id: 1,
         title: "موبایل",
@@ -712,4 +712,4 @@ const submenuItemsLinks = [
     }
 ]
 
-export { submenuListItems, userProfileLinks, specialLinks, links }
+export { categoryItems, userProfileLinks, specialLinks, links }
