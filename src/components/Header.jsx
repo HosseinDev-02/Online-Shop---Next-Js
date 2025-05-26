@@ -420,7 +420,7 @@ export default function Header() {
                     {/* Menu */}
                     <ul className="flex items-center gap-4 text-sm lg:text-base">
                         {links.map((link) => (
-                            <li className="group/store" key={link.id}>
+                            <li className={link.title.includes('فروشگاه') && "group/store"} key={link.id}>
                                 <Link className="primary-link" href={link.href}>
                                     {link.title}
                                 </Link>
@@ -457,13 +457,13 @@ export default function Header() {
                                                                         }
                                                                     </span>
                                                                 </Link>
-                                                                <div className="flex flex-col items-start gap-8 p-10 flex-wrap absolute right-[220px] left-0 w-fit transition-all duration-300 top-0 bottom-0 z-20 invisible opacity-0 text-black group-hover:opacity-100 group-hover:visible">
+                                                                <div className="flex flex-col items-start gap-y-10 gap-x-20 p-10 flex-wrap absolute right-[220px] left-0 w-fit transition-all duration-300 top-0 bottom-0 z-20 invisible opacity-0 text-black group-hover:opacity-100 group-hover:visible">
                                                                     {listItem.items.map(
                                                                         (
                                                                             item
                                                                         ) => (
                                                                             <div
-                                                                                className="flex flex-col gap-4"
+                                                                                className="flex flex-col gap-5"
                                                                                 key={
                                                                                     item.id
                                                                                 }
