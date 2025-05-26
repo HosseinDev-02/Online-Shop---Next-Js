@@ -1,56 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
-import StarIcon from "./icons/StarIcon";
-import FlashIcon from "./icons/FlashIcon";
-import MedalStarIcon from "./icons/MedalStarIcon";
-import SearchIcon from "./icons/SearchIcon";
-import UserIcon from "./icons/UserIcon";
-import BasketIcon from "./icons/BasketIcon";
-import CopyIcon from "./icons/CopyIcon";
-import ColorFIlterIcon from "./icons/ColorFIlterIcon";
-import CloseIcon from "./icons/CloseIcon";
-import PlusIcon from "./icons/PlusIcon";
-import MinusIcon from "./icons/MinusIcon";
-import EyeIcon from "./icons/EyeIcon";
-import UserSquareIcon from "./icons/UserSquareIcon";
-import NoteIcon from "./icons/NoteIcon";
-import HeartIcon from "./icons/HeartIcon";
-import LocationIcon from "./icons/LocationIcon";
-import MessageIcon from "./icons/MessageIcon";
-import LogoutIcon from "./icons/LogoutIcon";
+import { BiStar, BiMedal, BiUser, BiHeart, BiMap, BiPlus, BiMinus, BiCategoryAlt, BiShow } from "react-icons/bi"
+import { PiNotepad, PiXSquare } from "react-icons/pi"
+import { AiOutlineLogout } from "react-icons/ai"
+import { LuSearch } from "react-icons/lu"
+import { RiColorFilterLine, RiHome5Line } from "react-icons/ri"
+import { IoFlashOutline, IoNotificationsOutline, IoChevronDownOutline } from "react-icons/io5";
+import { TbCopy, TbMessageDots, TbShoppingBag, TbUserSquareRounded } from "react-icons/tb";
 import {
     userProfileLinks,
     links,
     specialLinks,
     categoryItems,
 } from "@/utils/data";
-import ChevronDownIcon from "./icons/ChevronDownIcon";
-import SofaIcon from "./icons/SofaIcon";
-import MobileIcon from "./icons/MobileIcon";
-import MonitorIcon from "./icons/MonitorIcon";
-import RefrigeratorIcon from "./icons/RefrigeratorIcon";
-import HeartEditIcon from "./icons/HeartEditIcon";
-import CarIcon from "./icons/CarIcon";
-import ShirtIcon from "./icons/ShirtIcon";
-import NecklaceIcon from "./icons/NecklaceIcon";
-import NotificationIcon from "./icons/NotificationIcon";
-import HomeIcon from "./icons/HomeIcon";
-import CategoryIcon from "./icons/CategoryIcon";
 import { getMenuItemsIcon } from "@/utils/funcs";
 
 const getSpecialLinksIcon = (link) => {
-    if (link.includes("جدیدترین")) return StarIcon;
-    if (link.includes("تخفیفات")) return FlashIcon;
-    if (link.includes("پرفروش ترین")) return MedalStarIcon;
+    if (link.includes("جدیدترین")) return BiStar;
+    if (link.includes("تخفیفات")) return IoFlashOutline;
+    if (link.includes("پرفروش ترین")) return BiMedal;
 };
 
 const getUserProfileLinksIcon = (link) => {
-    if (link.includes("حساب کاربری")) return UserSquareIcon;
-    if (link.includes("تاریخچه سفارشات")) return NoteIcon;
-    if (link.includes("علاقه مندی ها")) return HeartIcon;
-    if (link.includes("آدرس ها")) return LocationIcon;
-    if (link.includes("دیدگاه‌ها و نظرات")) return MessageIcon;
-    if (link.includes("خروج")) return LogoutIcon;
+    if (link.includes("حساب کاربری")) return TbUserSquareRounded;
+    if (link.includes("تاریخچه سفارشات")) return PiNotepad;
+    if (link.includes("علاقه مندی ها")) return BiHeart;
+    if (link.includes("آدرس ها")) return BiMap;
+    if (link.includes("دیدگاه‌ها و نظرات")) return TbMessageDots;
+    if (link.includes("خروج")) return AiOutlineLogout;
 };
 
 
@@ -73,9 +50,8 @@ export default function Header() {
                     </div>
                     {/* Search Box */}
                     <div className="max-w-[638px] w-full flex items-center gap-2 h-12 rounded-full bg-gray border border-zinc-300 px-3.5">
-                        <SearchIcon
-                            width={16}
-                            height={16}
+                        <LuSearch
+                            size={20}
                             className="shrink-0"
                         />
                         <input
@@ -98,16 +74,13 @@ export default function Header() {
                                     </span>{" "}
                                     | ورود
                                 </span>
-                                <UserIcon
-                                    strokeWidth={"2"}
-                                    width={24}
-                                    height={24}
+                                <BiUser
+                                    size={24}
                                 />
                                 {/* When User LoggedIn */}
-                                <ChevronDownIcon
+                                <IoChevronDownOutline
                                     color="var(--color-primary)"
-                                    width={16}
-                                    height={16}
+                                    size={16}
                                 />
                             </Link>
                             {/* User Header Content */}
@@ -116,7 +89,7 @@ export default function Header() {
                                 <div className="flex flex-col items-center justify-center gap-2 font-IranSansMedium text-xs h-[248px] bg-gradient-to-b from-[#FEEEE8] to-white">
                                     <div className="relative w-[100px] h-[100px]">
                                         <span className="absolute right-0 bottom-0 z-10 bg-white w-8 h-8 rounded-full flex items-center justify-center">
-                                            <PlusIcon width={24} height={24} />
+                                            <BiPlus size={24} />
                                         </span>
                                         <Image
                                             alt="user-profile-image"
@@ -147,8 +120,7 @@ export default function Header() {
                                                     >
                                                         <span>
                                                             <Icon
-                                                                width={24}
-                                                                height={24}
+                                                                size={24}
                                                             />
                                                         </span>
                                                         <span>
@@ -169,7 +141,7 @@ export default function Header() {
                                 <span className="text-xs font-IranSansMedium absolute -left-1 -top-1 text-white bg-black rounded-full h-4 px-1 flex items-center justify-center">
                                     3
                                 </span>
-                                <BasketIcon width={24} height={24} />
+                                <TbShoppingBag size={24} />
                             </button>
                             {/* Cart Content */}
                             <div className="bg-white rounded-md w-[345px] absolute left-0 top-14 shadow opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 delay-100 z-20">
@@ -208,9 +180,8 @@ export default function Header() {
                                                         </h6>
                                                         {/* Remove Cart Item Btn */}
                                                         <span>
-                                                            <CloseIcon
-                                                                width={20}
-                                                                height={20}
+                                                            <PiXSquare
+                                                                size={20}
                                                             />
                                                         </span>
                                                     </div>
@@ -230,17 +201,15 @@ export default function Header() {
                                             <div className="flex flex-col gap-2">
                                                 {/* Item Size */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <CopyIcon
-                                                        width={16}
-                                                        height={16}
+                                                    <TbCopy
+                                                        size={16}
                                                     />
                                                     <span>سایز 42</span>
                                                 </div>
                                                 {/* Item Color */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <ColorFIlterIcon
-                                                        width={16}
-                                                        height={16}
+                                                    <RiColorFilterLine
+                                                        size={16}
                                                     />
                                                     <div className="flex">
                                                         <span className="w-4 h-4 rounded-full bg-black"></span>
@@ -251,16 +220,14 @@ export default function Header() {
                                             {/* Cart Item Qty Button */}
                                             <div className="inline-flex items-center gap-2 rounded-md border h-10 px-4 font-IranSansMedium">
                                                 <span>
-                                                    <PlusIcon
-                                                        height={16}
-                                                        width={16}
+                                                    <BiPlus
+                                                        size={16}
                                                     />
                                                 </span>
                                                 <span>2</span>
                                                 <span>
-                                                    <MinusIcon
-                                                        height={16}
-                                                        width={16}
+                                                    <BiMinus
+                                                        size={16}
                                                     />
                                                 </span>
                                             </div>
@@ -299,9 +266,8 @@ export default function Header() {
                                                         </h6>
                                                         {/* Remove Cart Item Btn */}
                                                         <span>
-                                                            <CloseIcon
-                                                                width={20}
-                                                                height={20}
+                                                            <PiXSquare
+                                                                size={20}
                                                             />
                                                         </span>
                                                     </div>
@@ -321,17 +287,15 @@ export default function Header() {
                                             <div className="flex flex-col gap-2">
                                                 {/* Item Size */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <CopyIcon
-                                                        width={16}
-                                                        height={16}
+                                                    <TbCopy
+                                                        size={16}
                                                     />
                                                     <span>سایز 42</span>
                                                 </div>
                                                 {/* Item Color */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <ColorFIlterIcon
-                                                        width={16}
-                                                        height={16}
+                                                <RiColorFilterLine
+                                                        size={16}
                                                     />
                                                     <div className="flex">
                                                         <span className="w-4 h-4 rounded-full bg-black"></span>
@@ -342,17 +306,11 @@ export default function Header() {
                                             {/* Cart Item Qty Button */}
                                             <div className="inline-flex items-center gap-2 rounded-md border h-10 px-4 font-IranSansMedium">
                                                 <span>
-                                                    <PlusIcon
-                                                        height={16}
-                                                        width={16}
-                                                    />
+                                                    <BiPlus size={16}/>
                                                 </span>
                                                 <span>2</span>
                                                 <span>
-                                                    <MinusIcon
-                                                        height={16}
-                                                        width={16}
-                                                    />
+                                                    <BiMinus size={16}/>
                                                 </span>
                                             </div>
                                         </div>
@@ -391,9 +349,8 @@ export default function Header() {
                                                         </h6>
                                                         {/* Remove Cart Item Btn */}
                                                         <span>
-                                                            <CloseIcon
-                                                                width={20}
-                                                                height={20}
+                                                            <PiXSquare
+                                                                size={20}
                                                             />
                                                         </span>
                                                     </div>
@@ -413,17 +370,15 @@ export default function Header() {
                                             <div className="flex flex-col gap-2">
                                                 {/* Item Size */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <CopyIcon
-                                                        width={16}
-                                                        height={16}
+                                                    <TbCopy
+                                                        size={16}
                                                     />
                                                     <span>سایز 42</span>
                                                 </div>
                                                 {/* Item Color */}
                                                 <div className="flex items-center gap-2 text-xs">
-                                                    <ColorFIlterIcon
-                                                        width={16}
-                                                        height={16}
+                                                <RiColorFilterLine
+                                                        size={16}
                                                     />
                                                     <div className="flex">
                                                         <span className="w-4 h-4 rounded-full bg-black"></span>
@@ -434,16 +389,14 @@ export default function Header() {
                                             {/* Cart Item Qty Button */}
                                             <div className="inline-flex items-center gap-2 rounded-md border h-10 px-4 font-IranSansMedium">
                                                 <span>
-                                                    <PlusIcon
-                                                        height={16}
-                                                        width={16}
+                                                    <BiPlus
+                                                        size={16}
                                                     />
                                                 </span>
                                                 <span>2</span>
                                                 <span>
-                                                    <MinusIcon
-                                                        height={16}
-                                                        width={16}
+                                                    <BiMinus
+                                                        size={16}
                                                     />
                                                 </span>
                                             </div>
@@ -456,7 +409,7 @@ export default function Header() {
                                     className="bg-primary transition-all duration-200 hover:opacity-80 rounded-b-md text-white font-IranSansMedium flex justify-center items-center gap-2 h-12 w-full"
                                 >
                                     <span>مشاهده سبد خرید</span>
-                                    <EyeIcon width={24} height={24} />
+                                    <BiShow size={24} />
                                 </Link>
                             </div>
                         </div>
@@ -496,12 +449,7 @@ export default function Header() {
                                                                     }
                                                                 >
                                                                     <Icon
-                                                                        width={
-                                                                            20
-                                                                        }
-                                                                        height={
-                                                                            20
-                                                                        }
+                                                                        size={20}
                                                                     />
                                                                     <span>
                                                                         {
@@ -575,9 +523,7 @@ export default function Header() {
                                     href={link.href}
                                 >
                                     <Icon
-                                        strokeWidth="2"
-                                        width={16}
-                                        height={16}
+                                        size={16}
                                         color={"var(--color-primary)"}
                                     />
                                     <span>{link.title}</span>
@@ -592,9 +538,8 @@ export default function Header() {
                 {/* Mobile Header */}
                 <div className="py-4 px-4 flex md:hidden items-center gap-2">
                     <div className="w-full flex items-center gap-2 h-12 rounded-full bg-gray border border-zinc-300 px-3.5">
-                        <SearchIcon
-                            width={16}
-                            height={16}
+                        <LuSearch
+                            size={20}
                             className="shrink-0"
                         />
                         <input
@@ -603,27 +548,27 @@ export default function Header() {
                         />
                     </div>
                     <div className="relative w-10 h-10 flex items-center justify-center">
-                        <span className="text-xs font-IranSansMedium absolute -left-1 -top-1 text-white bg-red-400 rounded-full h-4 w-4 flex items-center justify-center">
+                        <span className="text-xs font-IranSansMedium absolute left-0 top-0 text-white bg-red-400 rounded-full h-4 w-4 flex items-center justify-center">
                             2
                         </span>
-                        <NotificationIcon width={32} height={32} />
+                        <IoNotificationsOutline size={32} />
                     </div>
                 </div>
                 {/* Mobile Menu Links */}
                 <div className="fixed left-0 right-0 bottom-0 w-full py-2 bg-white flex md:hidden items-center justify-around text-xs font-IranSansMedium px-4 shadow-[0px_0px_20px_2px_#00000014] text-[#606060]">
                     <Link className="flex flex-col items-center gap-1" href="#">
-                        <HomeIcon width={24} height={24} />
+                        <RiHome5Line size={24} />
                         <span>خانه</span>
                     </Link>
                     <Link
                         className="flex flex-col items-center gap-1"
                         href="/categories"
                     >
-                        <CategoryIcon width={24} height={24} />
+                        <BiCategoryAlt size={24} />
                         <span>دسته بندی ها</span>
                     </Link>
                     <Link className="flex flex-col items-center gap-1" href="#">
-                        <UserIcon width={24} height={24} />
+                        <BiUser size={24} />
                         <span>حساب کاربری</span>
                     </Link>
                 </div>

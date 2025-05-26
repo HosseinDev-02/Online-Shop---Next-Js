@@ -40,6 +40,7 @@
   --color-neutral-500: #868686;
   --color-neutral-600: #606060;
   --color-neutral-700: #404040;
+  --color-neutral-black: #000306;
 
   --font-RichardRegular: "Richard Regular";
   --font-IranSansMedium: "IranSans Medium";
@@ -74,7 +75,7 @@
 } */
 
 body {
-  @apply bg-white font-IranSans
+  @apply bg-white font-IranSans text-neutral-black
 }
 
 
