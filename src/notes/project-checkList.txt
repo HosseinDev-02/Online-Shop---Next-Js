@@ -1,0 +1,5 @@
+Desktop Header : Basket - SearchBox - UserProfile - Logo - Menu - specialLinks
+Mobile Header : Notification - SearchBox - Logo - Menu - UserProfile - Basket - Home Btn
+--------------------------------------------------------------------------------------------
+
+Menu : Categories - Blogs - ContactUs - AboutUs

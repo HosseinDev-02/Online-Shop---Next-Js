@@ -1,6 +1,0 @@
-Icon Size : 16px 24px
-Font Size : 12px 16px
-Btn Height : 48px
-Border Radius : 12px
-Text-Icon Spacing : 8px
-Shadow : 0px_0px_20px_2px_#00000014 , 0px_0px_50px_10px_#00000014

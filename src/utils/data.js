@@ -1,24 +1,13 @@
 const links = [
     {
-        id: 1,
-        title: "صفحه اصلی",
-        href: "/",
+        id: 2,
+        title: "دسته بندی ها",
+        href: "/store",
     },
     {
         id: 2,
-        title: "فروشگاه",
-        href: "/store",
-        submenu: true,
-    },
-    {
-        id: 3,
         title: "مقاله ها",
         href: "/blogs",
-    },
-    {
-        id: 4,
-        title: "تماس با ما",
-        href: "/contact-us",
     },
 ];
 
@@ -47,23 +36,8 @@ const userProfileLinks = [
         href: "#",
     },
     {
-        id: 2,
-        title: "تاریخچه سفارشات",
-        href: "#",
-    },
-    {
         id: 3,
         title: "علاقه مندی ها",
-        href: "#",
-    },
-    {
-        id: 4,
-        title: "آدرس ها",
-        href: "#",
-    },
-    {
-        id: 5,
-        title: "دیدگاه‌ها و نظرات",
         href: "#",
     },
     {

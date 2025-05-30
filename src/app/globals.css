@@ -86,3 +86,35 @@ body {
 .icon-active {
   @apply transition-colors duration-200 delay-75 fill-black text-black
 }
+
+.swiper-pagination {
+  @apply !left-auto !right-8 !w-auto
+}
+
+.swiper-pagination-bullet {
+  @apply !w-3 md:!w-5 !h-3 md:!h-5 !bg-neutral-100
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-white
+}
+
+.swiper-button-prev, .swiper-button-next {
+  @apply !w-6 !h-6 !text-neutral-200
+}
+
+.swiper-button-prev {
+  @apply !right-5
+}
+
+.swiper-button-next {
+  @apply !left-5
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  @apply !text-2xl
+}
+
+.swiper-button-disabled {
+  @apply !text-white
+}

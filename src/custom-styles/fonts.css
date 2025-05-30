@@ -2,34 +2,41 @@
 @font-face {
     font-family: "Richard Regular";
     src: url("/fonts/RichardCleanPersonalUseRegular.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans";
     src: url("/fonts/IranSansWeb/IRANSansWeb.woff") format("woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans Medium";
     src: url("/fonts/IranSansWeb/IRANSansWeb_Medium_FaNum.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans Black";
     src: url("/fonts/IranSansWeb/IRANSansWeb_Black_FaNum.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans Bold";
     src: url("/fonts/IranSansWeb/IRANSansWeb_Bold_FaNum.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans UltraLight";
     src: url("/fonts/IranSansWeb/IRANSansWeb_UltraLight_FaNum.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "IranSans Light";
     src: url("/fonts/IranSansWeb/IRANSansWeb_Light_FaNum.woff2") format("woff2");
+    font-display: swap;
 }
