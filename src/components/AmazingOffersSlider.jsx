@@ -158,10 +158,10 @@ function AmazingOffersSlider() {
                         href={product.href}
                         className="block font-IranSansMedium bg-white px-2 py-3"
                     >
-                        <div className="relative w-full h-36.5">
-                            <span className="absolute left-0 top-0 bg-primary/10 text-primary text-sm py-1 px-1.5 rounded-r-xl">
+                    <span className="absolute left-0 top-3 bg-primary/10 text-primary text-sm py-1 px-1.5 rounded-r-xl">
                                 {product.offer}%
                             </span>
+                        <div className="relative w-full h-36.5">
                             <Image
                                 className="object-cover md:rounded"
                                 fill
