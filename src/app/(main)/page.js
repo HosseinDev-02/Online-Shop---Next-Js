@@ -1,3 +1,4 @@
+import AmazingOffersSlider from "@/components/AmazingOffersSlider";
 import BannerSlider from "@/components/BannerSlider";
 import Container from "@/components/Container";
 import Image from "next/image";
@@ -85,8 +86,9 @@ export default function Home() {
                         className="object-cover"
                     />
                 </div>
+                {/* Buy by Categories */}
                 <section className="text-center">
-                    <h3 className="font-IranSansMedium text-xl mb-10">
+                    <h3 className="font-IranSansMedium text-xl mb-8">
                         خرید براساس دسته بندی
                     </h3>
                     <div className="grid grid-rows-2 grid-flow-col py-10 gap-8 md:gap-10 overflow-y-hidden overflow-x-auto">
@@ -112,6 +114,10 @@ export default function Home() {
                             </Link>
                         ))}
                     </div>
+                </section>
+                {/* Amazing Offers */}
+                <section className="mt-10">
+                    <AmazingOffersSlider/>
                 </section>
             </Container>
         </>

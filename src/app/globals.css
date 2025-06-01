@@ -118,3 +118,24 @@ body {
 .swiper-button-disabled {
   @apply !text-white
 }
+
+.amazingProductsSlider .swiper-slide:last-child{
+  @apply rounded-l-md overflow-hidden
+}
+
+.amazingProductsSlider .swiper-slide:nth-child(2) {
+  @apply rounded-r-md overflow-hidden
+}
+
+.amazingProductsSlider .swiper-button-prev, .amazingProductsSlider .swiper-button-next {
+  @apply bg-white flex items-center justify-center border-2 border-neutral-300 rounded-full !w-10 !h-10
+}
+
+.amazingProductsSlider .swiper-button-prev:after,
+.amazingProductsSlider .swiper-button-next:after {
+  @apply !text-sm text-neutral-500 !font-bold
+}
+
+.amazingProductsSlider .swiper-button-disabled {
+  @apply !invisible !opacity-0
+}
