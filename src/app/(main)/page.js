@@ -1,73 +1,75 @@
 import AmazingOffersSlider from "@/components/AmazingOffersSlider";
 import BannerSlider from "@/components/BannerSlider";
 import Container from "@/components/Container";
+import PopularProductsSlider from "@/components/PopularProductsSlider";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
-    const categories = [
-        {
-            id: 1,
-            title: "کتاب، لوازم تحریر و هنر",
-            image: "/images/categories/book.jpg",
-        },
-        {
-            id: 2,
-            title: "آرایشی بهداشتی",
-            image: "/images/categories/Cosmetics.jpg",
-        },
-        {
-            id: 3,
-            title: "کالای دیجیتال",
-            image: "/images/categories/Digital-goods.jpg",
-        },
-        {
-            id: 4,
-            title: "لوازم خانگی برقی",
-            image: "/images/categories/Electric-household-appliances.jpg",
-        },
-        {
-            id: 5,
-            title: "مد و پوشاک",
-            image: "/images/categories/Fashion-and-clothing.jpg",
-        },
-        {
-            id: 6,
-            title: "طلا و نقره",
-            image: "/images/categories/gold-and-silver.jpg",
-        },
-        {
-            id: 7,
-            title: "تجهیزات پزشکی و سلامت",
-            image: "/images/categories/Medical-and-health-equipment.jpg",
-        },
-        {
-            id: 8,
-            title: "موبایل",
-            image: "/images/categories/mobile.jpg",
-        },
-        {
-            id: 9,
-            title: "محصولات بومی و محلی",
-            image: "/images/categories/Native-and-local-products.jpg",
-        },
-        {
-            id: 10,
-            title: "سوپر مارکت آنلاین",
-            image: "/images/categories/supermarket.jpg",
-        },
-        {
-            id: 11,
-            title: "ابزار آلات و تجهیزات",
-            image: "/images/categories/Tools-and-equipment.jpg",
-        },
-        {
-            id: 12,
-            title: "کالای کارکرده",
-            image: "/images/categories/Used-goods.jpg",
-        },
-    ];
+const categories = [
+    {
+        id: 1,
+        title: "کتاب، لوازم تحریر و هنر",
+        image: "/images/categories/book.jpg",
+    },
+    {
+        id: 2,
+        title: "آرایشی بهداشتی",
+        image: "/images/categories/Cosmetics.jpg",
+    },
+    {
+        id: 3,
+        title: "کالای دیجیتال",
+        image: "/images/categories/Digital-goods.jpg",
+    },
+    {
+        id: 4,
+        title: "لوازم خانگی برقی",
+        image: "/images/categories/Electric-household-appliances.jpg",
+    },
+    {
+        id: 5,
+        title: "مد و پوشاک",
+        image: "/images/categories/Fashion-and-clothing.jpg",
+    },
+    {
+        id: 6,
+        title: "طلا و نقره",
+        image: "/images/categories/gold-and-silver.jpg",
+    },
+    {
+        id: 7,
+        title: "تجهیزات پزشکی و سلامت",
+        image: "/images/categories/Medical-and-health-equipment.jpg",
+    },
+    {
+        id: 8,
+        title: "موبایل",
+        image: "/images/categories/mobile.jpg",
+    },
+    {
+        id: 9,
+        title: "محصولات بومی و محلی",
+        image: "/images/categories/Native-and-local-products.jpg",
+    },
+    {
+        id: 10,
+        title: "سوپر مارکت آنلاین",
+        image: "/images/categories/supermarket.jpg",
+    },
+    {
+        id: 11,
+        title: "ابزار آلات و تجهیزات",
+        image: "/images/categories/Tools-and-equipment.jpg",
+    },
+    {
+        id: 12,
+        title: "کالای کارکرده",
+        image: "/images/categories/Used-goods.jpg",
+    },
+];
 
+
+export default function Home() {
     return (
         <>
             {/* Header Slider */}
@@ -78,14 +80,14 @@ export default function Home() {
             </div>
             <Container>
                 {/* Shopping By Categories */}
-                <div className="relative h-20 md:h-[106px] flex items-center justify-center my-10">
+                <section className="relative h-20 md:h-[106px] flex items-center justify-center my-10">
                     <Image
                         src="/header-shape.png"
                         alt="shape"
                         fill
                         className="object-cover"
                     />
-                </div>
+                </section>
                 {/* Buy by Categories */}
                 <section className="text-center">
                     <h3 className="font-IranSansMedium text-xl mb-8">
@@ -117,7 +119,22 @@ export default function Home() {
                 </section>
                 {/* Amazing Offers */}
                 <section className="mt-10">
-                    <AmazingOffersSlider/>
+                    <AmazingOffersSlider />
+                </section>
+                {/* Popular Products */}
+                <section className="mt-10">
+                    <div className="relative mb-8 flex items-center justify-between lg:justify-center">
+                        <h3 className="font-IranSansMedium text-xl text-center">
+                            پرفروشترین کالاها
+                        </h3>
+                        <Link
+                            href="#"
+                            className="primary-link font-IranSansMedium text-sm lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:my-auto"
+                        >
+                            مشاهده همه
+                        </Link>
+                    </div>
+                    <PopularProductsSlider/>
                 </section>
             </Container>
         </>
