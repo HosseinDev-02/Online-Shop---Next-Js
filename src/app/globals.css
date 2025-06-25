@@ -67,13 +67,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   @apply bg-white font-IranSans text-neutral-black
 }
@@ -127,13 +120,18 @@ body {
   @apply rounded-r-md overflow-hidden
 }
 
-.amazingProductsSlider .swiper-button-prev, .amazingProductsSlider .swiper-button-next {
-  @apply bg-white flex items-center justify-center border-2 border-neutral-300 rounded-full !w-10 !h-10
+.amazingProductsSlider .swiper-button-prev, 
+.amazingProductsSlider .swiper-button-next,
+.popularProductsSlider .swiper-button-prev, 
+.popularProductsSlider .swiper-button-next  {
+  @apply bg-white flex items-center justify-center border border-neutral-500 rounded-full !w-10 !h-10
 }
 
 .amazingProductsSlider .swiper-button-prev:after,
-.amazingProductsSlider .swiper-button-next:after {
-  @apply !text-sm text-neutral-500 !font-bold
+.amazingProductsSlider .swiper-button-next:after,
+.popularProductsSlider .swiper-button-prev:after,
+.popularProductsSlider .swiper-button-next:after {
+  @apply !text-sm text-neutral-700 !font-bold
 }
 
 .amazingProductsSlider .swiper-button-disabled {
